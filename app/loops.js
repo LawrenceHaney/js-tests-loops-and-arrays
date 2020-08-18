@@ -6,6 +6,11 @@
 // 1*2*3*4 = 24
 
 function factorials(num) {
+  let fact= 1
+  for (let i = 1; i < num+1; i++) {
+    fact = fact * i
+  }
+  return fact
 
 }
 
@@ -17,7 +22,15 @@ function factorials(num) {
 // output: 20
 
 function rangeTotal(n1, n2) {
-
+let min= Math.min(n1, n2)
+let max= Math.max(n1, n2)
+let range= max - min
+let count=0
+for (let i = 0; i < range+1; i++) {
+  count = count + min + i
+  
+}
+return count
 }
 
 // ------------------------------------------
@@ -30,5 +43,17 @@ function rangeTotal(n1, n2) {
 // output: 2
 
 function rangeDivisor(start, end, divisor) {
-
+  let min= Math.min(start, end)
+  let max= Math.max(start, end)
+  let range= max - min
+  let count= min
+  let score= 0
+  for (let i = 0; i < range+1; i++){
+    if(count% divisor == false) {
+      score ++ 
+      count ++
+      continue}
+    count ++
+  }
+return score
 }
